@@ -15,7 +15,7 @@ import pandas as pd
 
 # %%
 # =============================================================================
-# pd.read_table
+# pd.read_html()
 # =============================================================================
 url = "https://www.nps.gov/orgs/1207/national-park-visitation-sets-new-record-as-economic-engines.htm"
 
