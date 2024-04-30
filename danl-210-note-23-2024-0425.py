@@ -182,7 +182,7 @@ quotes[0].find_element(By.PARTIAL_LINK_TEXT, 'about').get_attribute('href')
 
 
 df = pd.DataFrame()
-for page in range(1,11):
+for page in range(1,len(quotes) + 1):
     url = 'https://quotes.toscrape.com/page/'+str(page)+'/'
     driver.get(url)
     quotes = driver.find_elements(By.CLASS_NAME, 'quote')
@@ -204,6 +204,7 @@ df.columns = ['quote', 'author', 'tags', 'author-url']
 
 df['tags'] = df['tags'].str.replace('Tags: ', '')
 df['tags'] = df['tags'].str.split(' ')
+
 
 
 df_author = pd.DataFrame()
