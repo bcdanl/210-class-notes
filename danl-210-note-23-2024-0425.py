@@ -182,7 +182,7 @@ quotes[0].find_element(By.PARTIAL_LINK_TEXT, 'about').get_attribute('href')
 
 
 df = pd.DataFrame()
-for page in range(1,len(quotes) + 1):
+for page in range(1, 11):
     url = 'https://quotes.toscrape.com/page/'+str(page)+'/'
     driver.get(url)
     quotes = driver.find_elements(By.CLASS_NAME, 'quote')
