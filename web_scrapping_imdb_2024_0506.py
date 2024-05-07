@@ -38,18 +38,17 @@ url = 'https://www.imdb.com/search/title/?genres=family'
 driver.get(url)
 
 # %%
+xpath = '/html/body/div[2]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/div[2]/div/span/button/span/span'
 
-xpath = '/html/body/div[2]/main/div[2]/div[3]/section/section/div/section/section'+\
-    '/div[2]/div/section/div[2]/div[2]/div[2]/div/span/button/span'
-btn = driver.find_element(By.XPATH, xpath)
-
-for i in range(0,3):
-    try:
-        btn.click()
-        # time.sleep(5)
-    except:
+for i in range(0,7):
+    try:    
+        btn = driver.find_element(By.XPATH, xpath)
         btn.click()
         time.sleep(5)
+    except:
+        pass
+    
+# %%
 
 xpath_lst = '/html/body/div[2]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul'
 lst = driver.find_element(By.XPATH, xpath_lst)
